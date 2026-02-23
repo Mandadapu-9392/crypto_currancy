@@ -26,10 +26,6 @@ plt.rcParams.update({
     "ytick.labelsize": 9,
 })
 
-
-# -----------------------------------------------------------
-# Plot 1 – Relational Plot (Line Chart)
-# -----------------------------------------------------------
 def plot_relational_plot(df):
     """Line plot of normalized closing prices (log scale)."""
     fig, ax = plt.subplots(figsize=(12, 5))
@@ -50,10 +46,6 @@ def plot_relational_plot(df):
     plt.savefig("relational_plot.png")
     plt.close()
 
-
-# -----------------------------------------------------------
-# Plot 2 – Categorical Plot (Bar Chart)
-# -----------------------------------------------------------
 def plot_categorical_plot(df):
     """Bar chart of top 20 annualised mean returns."""
     ann_return = (
@@ -78,10 +70,6 @@ def plot_categorical_plot(df):
     plt.savefig("categorical_plot.png")
     plt.close()
 
-
-# -----------------------------------------------------------
-# Plot 3 – Statistical Plot (Boxplot)
-# -----------------------------------------------------------
 def plot_statistical_plot(df):
     """Boxplot of daily log-returns for top 10 coins."""
     top10 = (
@@ -106,10 +94,6 @@ def plot_statistical_plot(df):
     plt.savefig("statistical_plot.png")
     plt.close()
 
-
-# -----------------------------------------------------------
-# Statistical Analysis
-# -----------------------------------------------------------
 def statistical_analysis(df, col: str):
     """Return mean, std, skewness and excess kurtosis."""
     mean = df[col].mean()
@@ -119,10 +103,6 @@ def statistical_analysis(df, col: str):
 
     return mean, stddev, skew, excess_kurtosis
 
-
-# -----------------------------------------------------------
-# Preprocessing
-# -----------------------------------------------------------
 def preprocessing(df):
     """Clean and prepare crypto dataset."""
     print("Initial shape:", df.shape)
@@ -146,10 +126,6 @@ def preprocessing(df):
 
     return df
 
-
-# -----------------------------------------------------------
-# Writing Output
-# -----------------------------------------------------------
 def writing(moments, col):
     """Print statistical interpretation."""
     print(f"\nFor the attribute {col}:")
@@ -177,9 +153,6 @@ def writing(moments, col):
     print(f"The data is {skew_text} and {kurt_text}.")
 
 
-# -----------------------------------------------------------
-# Main Function
-# -----------------------------------------------------------
 def main():
     """Main execution."""
     df = pd.read_csv("crypto50_combined.csv", parse_dates=["Date"])
@@ -198,3 +171,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
