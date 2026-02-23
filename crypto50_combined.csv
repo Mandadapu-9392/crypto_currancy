@@ -7,7 +7,6 @@ Crypto-50 Market Analysis
 import os
 import warnings
 from corner import corner  # kept as required (template import)
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -171,4 +170,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
